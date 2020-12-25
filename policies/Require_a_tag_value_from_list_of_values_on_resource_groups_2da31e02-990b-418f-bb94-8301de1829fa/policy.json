@@ -1,0 +1,54 @@
+{
+ "properties": {
+  "displayName": "Require a tag value from list of values on resource groups",
+  "policyType": "Custom",
+  "mode": "All",
+  "description": "Enforces a required tag from list values on resource groups.\nDefault value is 'Not specified'",
+  "metadata": {
+   "category": "Bell Tags",
+   "createdBy": "33a9c7c8-2fc9-4d3b-8e09-ce300f221f2f",
+   "createdOn": "2020-12-12T17:04:37.0310117Z",
+   "updatedBy": "33a9c7c8-2fc9-4d3b-8e09-ce300f221f2f",
+   "updatedOn": "2020-12-21T17:15:54.8173657Z"
+  },
+  "parameters": {
+   "tagName": {
+    "type": "String",
+    "metadata": {
+     "displayName": "Tag Name",
+     "description": "Name of the tag, such as 'environment'"
+    }
+   },
+   "tagValue": {
+    "type": "Array",
+    "metadata": {
+     "displayName": "Tag Values as array",
+     "description": "Value of the tags, such as 'production' which are allowed in array format"
+    },
+    "defaultValue": [
+     "not specified"
+    ]
+   }
+  },
+  "policyRule": {
+   "if": {
+    "allOf": [
+     {
+      "field": "type",
+      "equals": "Microsoft.Resources/subscriptions/resourceGroups"
+     },
+     {
+      "field": "[concat('tags[', parameters('tagName'), ']')]",
+      "notIn": "[parameters('tagValue')]"
+     }
+    ]
+   },
+   "then": {
+    "effect": "deny"
+   }
+  }
+ },
+ "id": "/subscriptions/d00a1186-6dda-436f-a507-3f8a829183d2/providers/Microsoft.Authorization/policyDefinitions/2da31e02-990b-418f-bb94-8301de1829fa",
+ "type": "Microsoft.Authorization/policyDefinitions",
+ "name": "2da31e02-990b-418f-bb94-8301de1829fa"
+}

@@ -1,0 +1,33 @@
+{
+ "sku": {
+  "name": "A0",
+  "tier": "Free"
+ },
+ "properties": {
+  "displayName": "Append a Backup tag and its value 'N' to resource groups Bell",
+  "policyDefinitionId": "/subscriptions/d00a1186-6dda-436f-a507-3f8a829183d2/providers/Microsoft.Authorization/policyDefinitions/9aab865f-2fd8-48f2-a4e0-b99e1b827812",
+  "scope": "/subscriptions/d00a1186-6dda-436f-a507-3f8a829183d2",
+  "notScopes": [],
+  "parameters": {
+   "tagName": {
+    "value": "Backup"
+   },
+   "tagValue": {
+    "value": "N"
+   }
+  },
+  "description": "",
+  "metadata": {
+   "assignedBy": "Michal M",
+   "parameterScopes": {},
+   "createdBy": "33a9c7c8-2fc9-4d3b-8e09-ce300f221f2f",
+   "createdOn": "2020-12-23T16:20:43.4772698Z",
+   "updatedBy": "33a9c7c8-2fc9-4d3b-8e09-ce300f221f2f",
+   "updatedOn": "2020-12-23T16:21:43.1579109Z"
+  },
+  "enforcementMode": "Default"
+ },
+ "id": "/subscriptions/d00a1186-6dda-436f-a507-3f8a829183d2/providers/Microsoft.Authorization/policyAssignments/8dfb9e6b1c7c48d2a119f3f9",
+ "type": "Microsoft.Authorization/policyAssignments",
+ "name": "8dfb9e6b1c7c48d2a119f3f9"
+}

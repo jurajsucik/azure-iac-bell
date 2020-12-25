@@ -1,0 +1,40 @@
+name: manage-azure-policy-b0fe09d8
+on:
+  workflow_dispatch:
+    inputs:
+      remarks:
+        description: 'Reason for triggering the workflow run'
+        required: false
+        default: 'Updating Azure Policies'
+
+
+## Uncomment the following if you wish to automatically trigger workflow run with every commit
+#
+#  push:
+#    paths:
+#      - 'policies/Require_a_tag_value_from_list_of_values_on_resource_groups_2da31e02-990b-418f-bb94-8301de1829fa/**'
+#      - 'policies/Require_a_tag_on_resource_groups_9aab865f-2fd8-48f2-a4e0-b99e1b827807/**'
+#      - 'policies/Append_a_tag_and_its_value_to_resource_groups_9aab865f-2fd8-48f2-a4e0-b99e1b827812/**'
+#      - 'policies/Inherit_a_tag_from_the_resource_group_d4109d74-55f8-4acf-8655-fbbd6f94d2a7/**'
+#      - 'policies/Require_a_tag_and_not_empty_value_on_resource_groups_fbd0954e-0212-4e97-9dc1-02face3859f2/**'
+#      - .github/workflows/manage-azure-policy-b0fe09d8.yml
+jobs:
+  apply-azure-policy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Login to Azure
+      uses: azure/login@v1
+      with:
+        creds: ${{secrets.AZURE_CREDENTIALS_b0fe09d8}}
+        allow-no-subscriptions: true
+    - name: Create or Update Azure Policies
+      uses: azure/manage-azure-policy@v0
+      with:
+        paths: |
+          policies/Require_a_tag_value_from_list_of_values_on_resource_groups_2da31e02-990b-418f-bb94-8301de1829fa/**
+          policies/Require_a_tag_on_resource_groups_9aab865f-2fd8-48f2-a4e0-b99e1b827807/**
+          policies/Append_a_tag_and_its_value_to_resource_groups_9aab865f-2fd8-48f2-a4e0-b99e1b827812/**
+          policies/Inherit_a_tag_from_the_resource_group_d4109d74-55f8-4acf-8655-fbbd6f94d2a7/**
+          policies/Require_a_tag_and_not_empty_value_on_resource_groups_fbd0954e-0212-4e97-9dc1-02face3859f2/**

@@ -1,0 +1,35 @@
+{
+ "sku": {
+  "name": "A0",
+  "tier": "Free"
+ },
+ "properties": {
+  "displayName": "Inherit a Environment tag from the resource group Bell",
+  "policyDefinitionId": "/subscriptions/d00a1186-6dda-436f-a507-3f8a829183d2/providers/Microsoft.Authorization/policyDefinitions/d4109d74-55f8-4acf-8655-fbbd6f94d2a7",
+  "scope": "/subscriptions/d00a1186-6dda-436f-a507-3f8a829183d2",
+  "notScopes": [],
+  "parameters": {
+   "tagName": {
+    "value": "Environment"
+   }
+  },
+  "metadata": {
+   "assignedBy": "Michal M",
+   "parameterScopes": {},
+   "createdBy": "33a9c7c8-2fc9-4d3b-8e09-ce300f221f2f",
+   "createdOn": "2020-12-23T16:34:13.629358Z",
+   "updatedBy": null,
+   "updatedOn": null
+  },
+  "enforcementMode": "Default"
+ },
+ "identity": {
+  "principalId": "cac38d1a-c3d1-4163-98d7-62dc49fb912f",
+  "tenantId": "7f879c12-5007-4e98-9a83-2c32ee3c146e",
+  "type": "SystemAssigned"
+ },
+ "id": "/subscriptions/d00a1186-6dda-436f-a507-3f8a829183d2/providers/Microsoft.Authorization/policyAssignments/7c717976ed3d4f4aa1b321ef",
+ "type": "Microsoft.Authorization/policyAssignments",
+ "name": "7c717976ed3d4f4aa1b321ef",
+ "location": "eastus"
+}

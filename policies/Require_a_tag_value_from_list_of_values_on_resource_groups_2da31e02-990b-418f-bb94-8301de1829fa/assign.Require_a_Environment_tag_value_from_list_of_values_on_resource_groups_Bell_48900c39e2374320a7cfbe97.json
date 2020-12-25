@@ -1,0 +1,38 @@
+{
+ "sku": {
+  "name": "A0",
+  "tier": "Free"
+ },
+ "properties": {
+  "displayName": "Require a Environment tag value from list of values on resource groups Bell",
+  "policyDefinitionId": "/subscriptions/d00a1186-6dda-436f-a507-3f8a829183d2/providers/Microsoft.Authorization/policyDefinitions/2da31e02-990b-418f-bb94-8301de1829fa",
+  "scope": "/subscriptions/d00a1186-6dda-436f-a507-3f8a829183d2",
+  "notScopes": [],
+  "parameters": {
+   "tagName": {
+    "value": "Environment"
+   },
+   "tagValue": {
+    "value": [
+     "prod",
+     "dev",
+     "qa",
+     "test"
+    ]
+   }
+  },
+  "description": "",
+  "metadata": {
+   "assignedBy": "Michal M",
+   "parameterScopes": {},
+   "createdBy": "33a9c7c8-2fc9-4d3b-8e09-ce300f221f2f",
+   "createdOn": "2020-12-23T16:42:02.0450166Z",
+   "updatedBy": "33a9c7c8-2fc9-4d3b-8e09-ce300f221f2f",
+   "updatedOn": "2020-12-23T16:43:04.2910039Z"
+  },
+  "enforcementMode": "Default"
+ },
+ "id": "/subscriptions/d00a1186-6dda-436f-a507-3f8a829183d2/providers/Microsoft.Authorization/policyAssignments/48900c39e2374320a7cfbe97",
+ "type": "Microsoft.Authorization/policyAssignments",
+ "name": "48900c39e2374320a7cfbe97"
+}

@@ -1,0 +1,29 @@
+{
+ "sku": {
+  "name": "A0",
+  "tier": "Free"
+ },
+ "properties": {
+  "displayName": "Require a Application tag is not empty value on resource groups Bell",
+  "policyDefinitionId": "/subscriptions/d00a1186-6dda-436f-a507-3f8a829183d2/providers/Microsoft.Authorization/policyDefinitions/9aab865f-2fd8-48f2-a4e0-b99e1b827807",
+  "scope": "/subscriptions/d00a1186-6dda-436f-a507-3f8a829183d2",
+  "notScopes": [],
+  "parameters": {
+   "tagName": {
+    "value": "Application"
+   }
+  },
+  "metadata": {
+   "assignedBy": "Michal M",
+   "parameterScopes": {},
+   "createdBy": "33a9c7c8-2fc9-4d3b-8e09-ce300f221f2f",
+   "createdOn": "2020-12-23T16:17:50.1693843Z",
+   "updatedBy": null,
+   "updatedOn": null
+  },
+  "enforcementMode": "Default"
+ },
+ "id": "/subscriptions/d00a1186-6dda-436f-a507-3f8a829183d2/providers/Microsoft.Authorization/policyAssignments/eb433235dd5446708d4c6651",
+ "type": "Microsoft.Authorization/policyAssignments",
+ "name": "eb433235dd5446708d4c6651"
+}

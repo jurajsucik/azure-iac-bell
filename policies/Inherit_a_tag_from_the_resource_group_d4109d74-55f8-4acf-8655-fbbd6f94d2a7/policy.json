@@ -1,0 +1,56 @@
+{
+ "properties": {
+  "displayName": "Inherit a tag from the resource group",
+  "policyType": "Custom",
+  "mode": "Indexed",
+  "description": "Adds or replaces the specified tag and value from the parent resource group when any resource is created or updated. Existing resources can be remediated by triggering a remediation task.",
+  "metadata": {
+   "category": "Bell Tags",
+   "createdBy": "33a9c7c8-2fc9-4d3b-8e09-ce300f221f2f",
+   "createdOn": "2020-12-23T15:45:40.8391931Z",
+   "updatedBy": null,
+   "updatedOn": null
+  },
+  "parameters": {
+   "tagName": {
+    "type": "String",
+    "metadata": {
+     "displayName": "Tag Name",
+     "description": "Name of the tag, such as 'environment'"
+    }
+   }
+  },
+  "policyRule": {
+   "if": {
+    "allOf": [
+     {
+      "field": "[concat('tags[', parameters('tagName'), ']')]",
+      "notEquals": "[resourceGroup().tags[parameters('tagName')]]"
+     },
+     {
+      "value": "[resourceGroup().tags[parameters('tagName')]]",
+      "notEquals": ""
+     }
+    ]
+   },
+   "then": {
+    "effect": "modify",
+    "details": {
+     "roleDefinitionIds": [
+      "/providers/microsoft.authorization/roleDefinitions/b24988ac-6180-42a0-ab88-20f7382dd24c"
+     ],
+     "operations": [
+      {
+       "operation": "addOrReplace",
+       "field": "[concat('tags[', parameters('tagName'), ']')]",
+       "value": "[resourceGroup().tags[parameters('tagName')]]"
+      }
+     ]
+    }
+   }
+  }
+ },
+ "id": "/subscriptions/d00a1186-6dda-436f-a507-3f8a829183d2/providers/Microsoft.Authorization/policyDefinitions/d4109d74-55f8-4acf-8655-fbbd6f94d2a7",
+ "type": "Microsoft.Authorization/policyDefinitions",
+ "name": "d4109d74-55f8-4acf-8655-fbbd6f94d2a7"
+}
