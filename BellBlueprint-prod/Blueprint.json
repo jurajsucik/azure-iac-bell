@@ -1,0 +1,9 @@
+{
+  "properties": {
+    "description": "Blueprint for production subscriptions",
+    "targetScope": "subscription",
+    "parameters": {},
+    "resourceGroups": {},
+    "blueprintName": "BellBlueprint-prod"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "kind": "policyAssignment",
+  "properties": {
+    "displayName": "Inherit a Backup tag from the resource group",
+    "dependsOn": [],
+    "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/z-mg-itu/providers/Microsoft.Authorization/policyDefinitions/31b2f496-8be6-4b72-9a1e-3e167c679c8f",
+    "parameters": {
+      "tagName": {
+        "value": "Backup"
+      }
+    }
+  }
+}
